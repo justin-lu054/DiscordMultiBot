@@ -205,7 +205,7 @@ class MatrixCog(commands.Cog, name = "Matrix"):
         except:
             await ctx.send("Matrices can only contain numbers")
     
-    #fix this 
+    
     @matrix.command()
     async def scalarmultiply(self, ctx, input1=None, input2=None):
         #Ensures that list only contains numbers
