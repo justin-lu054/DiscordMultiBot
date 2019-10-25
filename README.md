@@ -74,7 +74,7 @@ Simple leveling algorithm. Users gain xp whenever they send a message. All infor
 
 1. Install Python3 
 
-2. Open cmd and run ```--pip install discord.py``` and ```--pip install sqlite3```
+2. Open cmd and run ```pip install discord.py``` and ```pip install sqlite3```
 
 3. Add your discord bot token and your discord server token to the .env file 
 
