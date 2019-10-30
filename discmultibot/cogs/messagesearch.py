@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 import os
 import re
 
-#Your .env file path here
-load_dotenv(r"")
+#Enter r"YOUR_FILEPATH" inside parentheses if dotenv doesn't load.
+load_dotenv()
 GUILD = os.getenv("DISCORD_GUILD")
 
 class MessageSearchCog(commands.Cog, name = "MessageSearch"):
