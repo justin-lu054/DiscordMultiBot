@@ -1,4 +1,4 @@
-A discord bot made using the discord.py and sqlite3 API 
+A discord bot made using the discord.py and sqlite3 API. The files include a preconfigured local SQLite DB
 
 # Cogs/Features #
 
