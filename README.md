@@ -76,7 +76,7 @@ Simple leveling algorithm. Users gain xp whenever they send a message. All infor
 
 2. Open cmd and run ```pip install discord.py``` and ```pip install sqlite3```
 
-3. Add your discord bot token and your discord server token to the .env file. Specify the .env filepath
+3. Add your discord bot token and your discord server token to the .env file. Specify the .env filepath if load_dotenv() fails.
 
 4. Add your channel ID to cogs/messagesearch.py 
 
