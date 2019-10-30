@@ -7,8 +7,8 @@ import sys
 import datetime
 import sqlite3
 
-#YOUR .env FILEPATH HERE
-load_dotenv(r"")
+#Enter r"YOUR_FILEPATH" inside parentheses if dotenv doesn't load.
+load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 GUILD = os.getenv("DISCORD_GUILD")
 print(TOKEN)
