@@ -10,7 +10,7 @@ class ModCog(commands.Cog, name = "Moderation"):
 
     @commands.command()
     async def kick(self, ctx, user: discord.Member, *, reason=None): 
-        if user.guild_permissions.manage_messages:
+        if user.guild_permissions.administrator:
             await ctx.send("you can't kick the admin lmao")
         elif ctx.message.author.guild_permissions.kick_members:
             if reason is None:
@@ -24,7 +24,7 @@ class ModCog(commands.Cog, name = "Moderation"):
 
     @commands.command()
     async def ban(self, ctx, user: discord.Member, *, reason=None): 
-        if user.guild_permissions.manage_messages:
+        if user.guild_permissions.administrator:
             await ctx.send("you can't kick the admin lmao")
         elif ctx.message.author.guild_permissions.ban_members:
             if reason is None:
