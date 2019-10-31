@@ -7,7 +7,7 @@ import os
 import math
 from dotenv import load_dotenv
 
-load_dotenv(r"C:\Users\justi\Discord V1.0\keys.env")
+load_dotenv()
 host = os.getenv("host")
 port = int(os.getenv("port"))
 dbname = os.getenv("dbname")
