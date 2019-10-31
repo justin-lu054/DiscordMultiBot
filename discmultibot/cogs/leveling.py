@@ -59,12 +59,12 @@ class LevelingCog(commands.Cog, name = "Leveling"):
         if user is None:
             db = sqlite3.connect("leveling.sqlite")
             cursor = db.cursor()
-            cursor.execute(f"SELECT user_id FROM levels WHERE guild_id = '{ctx.message.author.guild.id}' and user_id = '{ctx.message.author.id}'")
+            cursor.execute(f"SELECT user_id, exp, lvl FROM levels WHERE guild_id = '{ctx.message.author.guild.id}' and user_id = '{ctx.message.author.id}'")
             result = cursor.fetchone()
             if result is None:
                 await ctx.send("That user is not yet ranked")
             else:
-                await ctx.send(f"{user.name} is currently level '{str(result[2])}' and has '{str(result[1])}' XP")
+                await ctx.send(f"{ctx.message.author.name} is currently level '{str(result[2])}' and has '{str(result[1])}' XP")
         else:
             db = sqlite3.connect("leveling.sqlite")
             cursor = db.cursor()
