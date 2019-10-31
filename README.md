@@ -1,4 +1,4 @@
-A discord bot made using the discord.py and sqlite3 API. The files include a preconfigured local SQLite DB.
+A discord bot made using the discord.py and sqlite3 API. This file is configured for any MySQL db
 
 # Cogs/Features #
 
@@ -74,9 +74,9 @@ Simple leveling algorithm. Users gain xp whenever they send a message. All infor
 
 1. Install Python3 
 
-2. Open cmd and run ```pip install discord.py``` and ```pip install sqlite3```
+2. Open cmd and run ```pip install discord.py``` and ```pip install mypysql```
 
-3. Add your discord bot token and your discord server token to the .env file. Specify the .env filepath if load_dotenv() fails.
+3. Add your discord bot token and your discord server token, and db information to the .env file. Specify the .env filepath if load_dotenv() fails.
 
 4. Add your channel ID to cogs/messagesearch.py 
 
