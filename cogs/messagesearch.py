@@ -36,7 +36,7 @@ class MessageSearchCog(commands.Cog, name = "MessageSearch"):
         #Converts the string stored in db back to datetime.datetime object 
         lastOnline = datetime.datetime.strptime(stringDate, '%Y-%m-%d %H:%M:%S.%f')
         #YOUR CHANNEL ID HERE 
-        channel = guild.get_channel(221383965255139328)
+        channel = guild.get_channel(YOUR_CHANNEL_ID_HERE)
         if result is None:
             async for message in channel.history(limit=None):
                 sql = ("INSERT INTO `messagelog` (`user_id`, `server_id`, `messagetext`) VALUES(%s, %s, %s)")
