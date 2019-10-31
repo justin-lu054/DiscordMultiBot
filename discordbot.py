@@ -9,7 +9,7 @@ import pymysql
 
 #YOUR .env FILEPATH HERE
 #Make sure to get rid of the dotenv stuff when you ssh to the host server
-load_dotenv(r"C:\Users\justi\Discord V1.0\keys.env")
+load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 GUILD = os.getenv("DISCORD_GUILD")
 host = os.getenv("host")
