@@ -68,7 +68,7 @@ class LevelingCog(commands.Cog, name = "Leveling"):
         else:
             db = sqlite3.connect("leveling.sqlite")
             cursor = db.cursor()
-            cursor.execute(f"SELECT user_id, exp, lvl FROM levels WHERE guild_id = '{ctx.message.author.guild.id}' and user_id = '{ctx.message.author.id}'")
+            cursor.execute(f"SELECT user_id, exp, lvl FROM levels WHERE guild_id = '{ctx.message.author.guild.id}' and user_id = '{user.id}'")
             result = cursor.fetchone()
             if result is None:
                 await ctx.send("That user is not yet ranked")
