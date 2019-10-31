@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 import os
 import re
 
-load_dotenv(r"C:\Users\justi\Discord V1.0\keys.env")
+load_dotenv()
 GUILD = os.getenv("DISCORD_GUILD")
 host = os.getenv("host")
 port = int(os.getenv("port"))
