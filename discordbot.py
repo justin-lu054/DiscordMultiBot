@@ -32,7 +32,7 @@ async def on_ready():
     print(f"Guild members:\n - {members}")
 
 #Loads all of the cogs
-initial_extensions = ["cogs.moderation", "cogs.cockandball", "cogs.matrixcalculation", "cogs.leveling", "cogs.messagesearch"]
+initial_extensions = ["cogs.moderation", "cogs.matrixcalculation", "cogs.leveling", "cogs.messagesearch"]
 if __name__ == "__main__":
     for extension in initial_extensions:
         try:
