@@ -11,6 +11,15 @@ import re
 load_dotenv()
 GUILD = os.getenv("DISCORD_GUILD")
 
+
+def clear_db(self): 
+        db = sqlite3.connect("leveling.sqlite")
+        cursor = db.cursor()
+        cursor.execute("DELETE FROM messagelog")
+        db.commit() 
+        cursor.close()
+        db.close()
+
 class MessageSearchCog(commands.Cog, name = "MessageSearch"):
     def __init__(self, bot):
         self.bot = bot
