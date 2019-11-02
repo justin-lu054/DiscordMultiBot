@@ -13,16 +13,33 @@ GUILD = os.getenv("DISCORD_GUILD")
 
 
 def clear_db(self): 
-        db = sqlite3.connect("leveling.sqlite")
-        cursor = db.cursor()
-        cursor.execute("DELETE FROM messagelog")
-        db.commit() 
-        cursor.close()
-        db.close()
-
+    db = sqlite3.connect("leveling.sqlite")
+    cursor = db.cursor()
+    cursor.execute("DELETE FROM messagelog")
+    db.commit() 
+    cursor.close()
+    db.close()
+        
 class MessageSearchCog(commands.Cog, name = "MessageSearch"):
     def __init__(self, bot):
         self.bot = bot
+    
+    @commands.command()
+    async def refresh_db(self, ctx, channel: discord.TextChannel=None):
+        channel = channel or ctx.channel
+        if ctx.message.author.id == YOUR_ID_HERE:
+            clear_db(self)
+            db = sqlite3.connect("leveling.sqlite")
+            cursor = db.cursor()
+            async for message in channel.history(limit=None):
+                sql = ("INSERT INTO messagelog (user_id, server_id, messagetext) VALUES(?, ?, ?)")
+                val = (message.author.id, ctx.message.author.guild.id, message.content)
+                cursor.execute(sql, val)
+            db.commit()
+            cursor.close()
+            db.close()
+        else:
+            await ctx.send("You don't have permissions for this")
 
     @commands.Cog.listener()
     async def on_ready(self):
